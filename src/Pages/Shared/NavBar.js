@@ -49,7 +49,7 @@ const NavBar = () => {
 		</>
 	);
 	return (
-		<div>
+		<div className="px-12">
 			<div class="navbar bg-base-100">
 				<div class="navbar-start">
 					<div class="dropdown">

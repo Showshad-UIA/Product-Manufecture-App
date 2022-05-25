@@ -11,7 +11,7 @@ const Banner = () => {
 
 	return (
 		<img
-			className="d-block px-6 w-100 "
+			className="d-block px-12 w-100  "
 			style={{ height: 600, width: 1400 }}
 			src={banner}
 			alt="First slide"
