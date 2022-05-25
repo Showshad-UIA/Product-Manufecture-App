@@ -1,0 +1,66 @@
+[
+	{
+		"name": "meter",
+		"minimum order quantity": "150",
+		"available quantity": "200",
+		"price": "$25",
+		"description": "This is most rated product among the meters, user are happy with this",
+		"img": "https://i.ibb.co/Dw1hwjs/Background-28.png"
+	},
+	{
+		"name": "clatch",
+		"minimum order quantity": "200",
+		"available quantity": "650",
+		"price": "$50",
+		"description": "Best fitted clatch for best users, we have imported cheap rated parts",
+		"img": "https://i.ibb.co/hChyWn6/Background-27.png"
+	},
+	{
+		"name": "nozzle",
+		"minimum order quantity": "100",
+		"available quantity": "300",
+		"price": "$35",
+		"description": "Best motor parts ever from our belobed supplier  ",
+		"img": "https://i.ibb.co/5GJwGT9/Background-26.png"
+	},
+	{
+		"name": "oil filter",
+		"minimum order quantity": "200",
+		"available quantity": "350",
+		"price": "$25",
+		"description": "The best quality product from imported company with resonable price",
+		"img": "https://i.ibb.co/1sQQqYp/Background-25.png"
+	},
+	{
+		"name": "hummer",
+		"minimum order quantity": "70",
+		"available quantity": "350",
+		"price": "$20",
+		"description": "Availabe parts you can get here with reasonable price from varity company",
+		"img": "https://i.ibb.co/f05CWwL/Background-24.png"
+	},
+	{
+		"name": "3- square",
+		"minimum order quantity": "200",
+		"available quantity": "300",
+		"price": "$30",
+		"description": "The price is reasonable, you can get your best fit item here. ",
+		"img": "https://i.ibb.co/pj6z16R/Background-22.png"
+	},
+	{
+		"name": "handle",
+		"minimum order quantity": "200",
+		"available quantity": "300",
+		"price": "$20",
+		"description": "We have imported quality handle. There are varity of design you can find here",
+		"img": "https://i.ibb.co/Db4NSpB/Background-21.png"
+	},
+	{
+		"name": "motor",
+		"minimum order quantity": "250",
+		"available quantity": "400",
+		"price": "$10",
+		"description": "This is one of the high quality motor where user can safe energy",
+		"img": "https://i.ibb.co/0rwsTrP/Background-20.png"
+	}
+]
