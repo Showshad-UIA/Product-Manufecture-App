@@ -8,12 +8,13 @@ const Products = () => {
 		fetch("http://localhost:5000/tools")
 			.then((res) => res.json())
 			.then((data) => setProducts(data));
-		console.log("data");
 	}, []);
 	return (
-		<div>
-			<h2 className="text-center mt-5 my-5 font-bold">Feature Product</h2>
-			<div className="product-container mx-12">
+		<div className="my-28">
+			<div className="text-center">
+				<h2 className="text-primary text-4xl mb-5">On Stock Tools </h2>
+			</div>
+			<div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-12">
 				{products.map((product) => (
 					<Product key={product.id} product={product}></Product>
 				))}

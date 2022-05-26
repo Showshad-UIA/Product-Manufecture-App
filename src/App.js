@@ -9,7 +9,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Blog from "./Pages/Blog/Blog";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Order from "./Pages/Order/Order";
-import Footer from "./Footer/Footer";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
 	return (
