@@ -10,6 +10,7 @@ import Blog from "./Pages/Blog/Blog";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Order from "./Pages/Order/Order";
 import Footer from "./Pages/Shared/Footer/Footer";
+import SignUp from "./Pages/SignUp/SignUp";
 
 function App() {
 	return (
@@ -24,6 +25,8 @@ function App() {
 				<Route path="/blog" element={<Blog></Blog>}></Route>
 				<Route path="/order" element={<Order></Order>}></Route>
 				<Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+				<Route path="/" element={<SignUp></SignUp>}></Route>
+
 				<Route path="*" element={<NotFound></NotFound>}></Route>
 			</Routes>
 			<Footer></Footer>
