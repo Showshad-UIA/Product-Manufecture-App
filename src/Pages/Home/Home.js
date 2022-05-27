@@ -2,6 +2,7 @@ import React from "react";
 
 import { useEffect } from "react";
 import ContactForm from "../ContactForm/ContactForm";
+import Expart from "../Expart/Expart";
 
 import Products from "../Products/Products";
 import Progress from "../Progress/Progress";
@@ -25,6 +26,7 @@ const Home = () => {
 			<Banner></Banner>
 			<Products></Products>
 			<Reviews></Reviews>
+			<Expart></Expart>
 			<Progress></Progress>
 
 			<div className="py-6">

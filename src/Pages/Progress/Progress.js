@@ -2,10 +2,11 @@ import React from "react";
 
 const Progress = () => {
 	return (
-		<div>
-			<h3 className="text-4xl text-center text-bold  text-black mb-3 mt-2">
+		<div className="px-12">
+			<h3 className="text-4xl mt-5 text-center text-bold  text-black mb-3">
 				Business Summary
 			</h3>
+			<div className="divider"></div>
 			<div className="stats  mb-4 gap-80 px-12 mr-10 w-full justify-center stats-vertical lg:stats-horizontal shadow">
 				<div className="stat">
 					<div className="stat-title">Customer</div>

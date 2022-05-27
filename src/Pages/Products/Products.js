@@ -13,6 +13,7 @@ const Products = () => {
 		<div className="my-28">
 			<div className="text-center">
 				<h2 className="text-black text-4xl mb-5">On Stock Tools </h2>
+				<div className="divider px-12"></div>
 			</div>
 			<div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-12">
 				{products.map((product) => (
