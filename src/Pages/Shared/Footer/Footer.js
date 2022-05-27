@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 const Footer = () => {
 	return (
-		<footer class="footer p-10 px-12 bg-base-200 text-base-content">
+		<footer class="footer  p-10 px-12 bg-base-200 text-base-content">
 			<div>
 				<span class="footer-title">Services</span>
 				<a class="link link-hover">Branding</a>

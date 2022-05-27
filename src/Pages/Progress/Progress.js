@@ -3,10 +3,10 @@ import React from "react";
 const Progress = () => {
 	return (
 		<div>
-			<h3 className="text-3xl text-center text-primary mb-3 mt-2">
-				Our Progress
+			<h3 className="text-4xl text-center text-bold  text-black mb-3 mt-2">
+				Business Summary
 			</h3>
-			<div className="stats  mb-4 gap-80 px-12 mr-10 w-50 justify-center stats-vertical lg:stats-horizontal shadow">
+			<div className="stats  mb-4 gap-80 px-12 mr-10 w-full justify-center stats-vertical lg:stats-horizontal shadow">
 				<div className="stat">
 					<div className="stat-title">Customer</div>
 					<div className="stat-value">31K</div>
