@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./product.css";
 const Product = (props) => {
 	const {
-		id,
+		_id,
 		name,
 		price,
 		minimum_order_quantity,
@@ -13,7 +13,7 @@ const Product = (props) => {
 	} = props.product;
 	const navigate = useNavigate();
 	const itemDetails = () => {
-		const path = `/product/${id}`;
+		const path = `/parchase/${_id}`;
 		navigate(path);
 	};
 	return (

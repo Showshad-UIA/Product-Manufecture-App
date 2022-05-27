@@ -23,14 +23,28 @@ const Navbar = () => {
 			<li>
 				<Link to="/portfolio">Portfolio</Link>
 			</li>
+
 			<li>
-				<Link to="/about">About</Link>
-			</li>
-			{user && (
 				<li>
 					<Link to="/dashboard">Dashboard</Link>
 				</li>
-			)}
+				<ul class="p-2">
+					<li>
+						<Link to="/addReview">Add Review</Link>
+					</li>
+					<li>
+						<Link to="/myProfile">My Profile</Link>
+					</li>
+					<li>
+						<Link to="/myOrders">My Orders</Link>
+					</li>
+				</ul>
+			</li>
+			{/* {user && (
+				<li>
+					<Link to="/dashboard">My Orders</Link>
+				</li>
+			)} */}
 			<li>
 				{user ? (
 					<button className="btn btn-ghost" onClick={logout}>
