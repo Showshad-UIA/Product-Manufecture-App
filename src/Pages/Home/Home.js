@@ -9,6 +9,7 @@ import Progress from "../Progress/Progress";
 import Reviews from "../Reviews/Reviews";
 
 import Banner from "./Banner";
+import Location from "./Location";
 
 const Home = () => {
 	useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
 			<Reviews></Reviews>
 			<Expart></Expart>
 			<Progress></Progress>
+			<Location></Location>
 
 			<div className="py-6">
 				<ContactForm />

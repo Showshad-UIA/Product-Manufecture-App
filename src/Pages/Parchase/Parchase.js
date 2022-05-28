@@ -1,106 +1,97 @@
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
-import { ToastContainer } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-// import { ToastContainer } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.init";
+
 const Parchase = () => {
-	const numberRef = useRef();
-	const { _Id } = useParams();
+	const orderRef = useRef();
+	const { id } = useParams();
+	const navigate = useNavigate();
 	const [product, setProduct] = useState({});
+	const [user] = useAuthState(auth);
 	useEffect(() => {
-		fetch(`http://localhost:5000/products/${_Id}`)
+		fetch(`http://localhost:5000/tools/${id}`)
 			.then((res) => res.json())
 			.then((data) => setProduct(data));
-	}, [_Id]);
+	}, [id]);
 
-	const handleDeliveredToQuantity = (id) => {
-		const url = `http://localhost:5000/products/${_Id}`;
-
-		if (product.quantity > 0) {
-			product.quantity = product.quantity - 1;
-			setProduct({ ...product });
-		} else {
-			alert("add product");
+	const handleMinus = (e) => {
+		e.preventDefault();
+		let minus = orderRef.current.value;
+		const countValue = `${product.availableQuantity}`;
+		if (minus > countValue) {
+			minus = countValue - 1;
 		}
-		const quantities = product.quantity;
-		console.log(quantities);
-		//update Quantity
-
-		fetch(url, {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ quantities: quantities }),
+	};
+	const handleOrder = (e) => {
+		const orderCount = orderRef.current.value;
+		const orders = {
+			productId: product.id,
+			productName: product.name,
+			productPrice: product.price,
+			productOrder: orderCount,
+			productPurchase: user.email,
+		};
+		fetch("https://trevel-hardware.herokuapp.com/orders", {
+			method: "POST",
+			headers: {
+				"content-type": "application/json",
+			},
+			body: JSON.stringify(orders),
 		})
 			.then((res) => res.json())
 			.then((data) => {
 				console.log(data);
-				product.quantity = quantities;
-				setProduct({ ...product });
+				toast("Your order is confirm");
+				navigate("/dashBoard");
 			});
 	};
-
-	const handleAddQuantity = (id) => {
-		const url = `http://localhost:5000/products/${id}`;
-		const currentQuantity = parseInt(numberRef.current.value);
-		let previousQuantity = parseInt(product.quantity);
-		if (previousQuantity > 0) {
-			product.quantity = previousQuantity + currentQuantity;
-			setProduct({ ...product });
-		} else {
-			alert("add product");
-		}
-		const quantities = product.quantity;
-		console.log(quantities);
-		//update Quantity
-
-		fetch(url, {
-			method: "PUT",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ quantities: quantities }),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				product.quantity = quantities;
-				setProduct({ ...product });
-			});
-	};
-
 	return (
-		<div className="h-75 bg-secondary">
-			<h1 className="text-center">Product name: {product.name}</h1>
-
-			<div className="row">
-				<div className="col-md-6">
-					<div className="card mx-auto product g-4 w-50">
+		<div className="">
+			<div className=" grid lg:grid-cols-3 sm:grid-cols-1 gap-2">
+				<div className="hero  ">
+					<div className="hero-content flex-col lg:flex-row">
 						<img
-							style={{ height: "150px", width: "150px" }}
 							src={product.img}
+							className="max-w-sm rounded-lg shadow-2xl"
 							alt=""
 						/>
-						<h5> Name:{product.name}</h5>
-						<p className="mt-0">{product.description}</p>
-						<h5 className="mt-0">Price:${product.price}</h5>
-						<p className="mt-0">Quantity:{product.quantity}</p>
-						<p className="mt-0">Supplier:{product.supplier}</p>
-						<p className="sold">Sold</p>
-						<button
-							onClick={() => handleDeliveredToQuantity(product._id)}
-							className="btn btn-primary"
-						>
-							Delivered
-						</button>
 					</div>
 				</div>
-				<div className="col-md-6">
-					<form onSubmit={() => handleAddQuantity(product._id)}>
-						<input ref={numberRef} type="number" placeholder="Add Quantity" />
-						<br />
+				<div className="mt-20">
+					<h1 className="text-2xl font-bold">{product.name}</h1>
+					<p>{product.description}</p>
+					<h2 className="font-bold text-xl">Price: ${product.price}</h2>
+					<h2 className="font-bold text-xl">
+						Available Quantity: {product.available_quantity} Pice
+					</h2>
+					<h2 className="font-bold text-xl">
+						Available Quantity: {product.minimum_order_quantity} Pice
+					</h2>
+				</div>
+				<div className="flex gap-4">
+					<button onClick={handleMinus} className="ms-6">
+						<FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
+					</button>
 
-						<button className="btn btn-primary mt-2">Add Quantity</button>
-					</form>
+					<input
+						ref={orderRef}
+						min="0"
+						className="form-control w-12 h-10 my-32 bg-[#F6F5FA]"
+						type="number"
+						value={product.minQuantity}
+					/>
+					<button>
+						<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+					</button>
 				</div>
 			</div>
-			<ToastContainer />
+			<button onClick={handleOrder} className="btn btn-primary">
+				Confirm order
+			</button>
 		</div>
 	);
 };

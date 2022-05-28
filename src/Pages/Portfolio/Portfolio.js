@@ -8,7 +8,7 @@ const Portfolio = () => {
 			</label>
 
 			<input type="checkbox" id="my-modal-6" class="modal-toggle" />
-			<div class="modal modal-bottom sm:modal-middle">
+			<div className=" modal modal-bottom sm:modal-middle">
 				<div class="modal-box">
 					<h3 class="font-bold text-lg"> Name: Mohammad Raihanul Islam</h3>
 					<p class="py-4 font-bold text-lg">Email: raihanulmcse@gmail.com</p>

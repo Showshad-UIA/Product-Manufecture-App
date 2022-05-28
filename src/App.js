@@ -32,7 +32,7 @@ function App() {
 				<Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
 				<Route path="/signup" element={<SignUp></SignUp>}></Route>
 				<Route
-					path="/parchase/:_id"
+					path="/parchase/:id"
 					element={
 						<RequireAuth>
 							<Parchase></Parchase>
