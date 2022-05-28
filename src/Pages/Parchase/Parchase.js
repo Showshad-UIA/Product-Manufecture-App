@@ -35,7 +35,7 @@ const Parchase = () => {
 			productOrder: orderCount,
 			productPurchase: user.email,
 		};
-		fetch("https://trevel-hardware.herokuapp.com/orders", {
+		fetch("https://localhost:5000/orders", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

@@ -16,6 +16,7 @@ import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import MyOrders from "./Pages/MyOrders/MyOrders";
 import AddReview from "./Pages/AddReview/AddReview";
 import MyProfile from "./Pages/MyProfile/MyProfile";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 	return (
@@ -40,7 +41,7 @@ function App() {
 					}
 				></Route>
 				<Route
-					path="dashboard"
+					path="dashBoard"
 					element={
 						<RequireAuth>
 							<Dashboard />
@@ -55,6 +56,7 @@ function App() {
 			</Routes>
 
 			<Footer></Footer>
+			<ToastContainer></ToastContainer>
 		</div>
 	);
 }
