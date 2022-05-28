@@ -26,7 +26,7 @@ function App() {
 				<Route path="/" element={<Home></Home>}></Route>
 				{/* <Route path="about" element={<About />}></Route> */}
 				<Route path="/login" element={<Login></Login>}></Route>
-				<Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+
 				<Route path="/blog" element={<Blog></Blog>}></Route>
 				<Route path="/order" element={<Order></Order>}></Route>
 				<Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
@@ -39,9 +39,19 @@ function App() {
 						</RequireAuth>
 					}
 				></Route>
-				<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
-				<Route path="/addReview" element={<AddReview></AddReview>}></Route>
-				<Route path="/myProfile" element={<MyProfile></MyProfile>}></Route>
+				<Route
+					path="dashboard"
+					element={
+						<RequireAuth>
+							<Dashboard />
+						</RequireAuth>
+					}
+				>
+					<Route index element={<MyProfile></MyProfile>}></Route>
+					<Route path="myReviews" element={<AddReview></AddReview>}></Route>
+					<Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+				</Route>
+
 				{/* <Route </Route>
 				<Route }
 				<Route path="/addReview" element={<AddReview></AddReview>}

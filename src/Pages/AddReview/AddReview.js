@@ -9,4 +9,3 @@ const AddReview = () => {
 };
 
 export default AddReview;
-<h1>Add review page</h1>;
