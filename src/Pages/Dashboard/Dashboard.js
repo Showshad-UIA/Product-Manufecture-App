@@ -6,23 +6,22 @@ const Dashboard = () => {
 		<div class="drawer drawer-mobile">
 			<input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
 			<div class="drawer-content">
-				<h2 className="text-2xl font-bold text-purple-500">
-					Welcome to your Dashboard
+				<h2 className="text-2xl font-bold text-center text-purple-500">
+					Welcome to the Dashboard
 				</h2>
 				<Outlet></Outlet>
 			</div>
 			<div class="drawer-side">
 				<label for="dashboard-sidebar" class="drawer-overlay"></label>
 				<ul class="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-					{/* <!-- Sidebar content here --> */}
 					<li>
-						<Link to="/dashboard">Add Profile</Link>
+						<Link to="/dashboard/myOrders">My Orders</Link>
 					</li>
 					<li>
 						<Link to="/dashboard/myReviews">Add Reviews</Link>
 					</li>
 					<li>
-						<Link to="/dashboard/myOrders">My Orders</Link>
+						<Link to="/dashboard">My profile</Link>
 					</li>
 				</ul>
 			</div>

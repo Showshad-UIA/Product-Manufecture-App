@@ -42,11 +42,10 @@ const Blog = () => {
 				if you have const [products, setProducts] = useState([]). Why you do not
 				set products = [...] instead, you use the setProducts?
 				<h3 className="text-primary">
-					SQL Data structure is relational or NoSQL is no relational data
-					structure.SQL databases defines and manipulates data based structured
-					query language.NoSQL is database dynamic schema for unstructured
-					data.SQL vertically scalable , NoSQL is horizontally scalable.NoSQL is
-					follows CAP,SQL follows ACID property.
+					setState() as a request rather than an immediate command to update the
+					component.s changes to the component state and tells React that this
+					component and its children need to be re-rendered with the updated
+					state.setState() works to set the value
 				</h3>
 			</div>
 			<div className="font-bold text-center text-black mb-5">

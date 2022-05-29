@@ -2,6 +2,7 @@ import React from "react";
 import img1 from "../../Asset/review 1.png";
 import img2 from "../../Asset/review 2.png";
 import img3 from "../../Asset/review 3.png";
+import img4 from "../../Asset/Background (27).png";
 import Review from "../Review/Review";
 
 const Reviews = () => {
@@ -9,21 +10,21 @@ const Reviews = () => {
 		{
 			_id: 1,
 			name: "Robert",
-			rating: "*****",
+			rating: img4,
 			img: img1,
 			Position: "CEO-Expert.com",
 		},
 		{
 			_id: 2,
 			name: "Jemmy",
-			rating: "****",
+			rating: img4,
 			img: img2,
 			Position: "Technical expert",
 		},
 		{
 			_id: 3,
 			name: "Clark",
-			rating: "*****",
+			rating: img4,
 			img: img3,
 			Position: "Manager-HostDB",
 		},

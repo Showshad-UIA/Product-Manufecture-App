@@ -9,7 +9,8 @@ import Loading from "../Shared/Loading";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Login = () => {
-	const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+	const [signInWithGoogle, googleUser, googleLoading, , googleError] =
+		useSignInWithGoogle(auth);
 	const {
 		register,
 		formState: { errors },
@@ -24,19 +25,19 @@ const Login = () => {
 	let from = location.state?.from?.pathname || "/";
 
 	useEffect(() => {
-		if (user || gUser) {
+		if (user || googleUser) {
 			navigate(from, { replace: true });
 		}
-	}, [user, gUser, from, navigate]);
+	}, [user, googleUser, from, navigate]);
 
-	if (loading || gLoading) {
+	if (loading || googleLoading) {
 		return <Loading></Loading>;
 	}
 
-	if (error || gError) {
+	if (error || googleError) {
 		signInError = (
 			<p className="text-red-500">
-				<small>{error?.message || gError?.message}</small>
+				<small>{error?.message || googleError?.message}</small>
 			</p>
 		);
 	}

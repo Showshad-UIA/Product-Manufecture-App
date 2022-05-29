@@ -13,7 +13,9 @@ const Review = ({ review }) => {
 						</div>
 						<div>
 							<h3 className="text-xl">{review.name}</h3>
-							<h3 className="text-xl">Ratings:{review.rating}</h3>
+							<h3 className="text-xl">
+								<img src={review.rating} alt="" />
+							</h3>
 							<h3 className="text-xl">{review.Position}</h3>
 						</div>
 					</div>

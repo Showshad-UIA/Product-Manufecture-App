@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 
 const Parchase = () => {
 	const orderRef = useRef();
@@ -48,6 +49,7 @@ const Parchase = () => {
 				toast("Your order is confirm");
 				navigate("/dashBoard");
 			});
+		<Loading></Loading>;
 	};
 	return (
 		<div className="">
