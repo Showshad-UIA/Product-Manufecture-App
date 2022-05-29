@@ -13,7 +13,7 @@ const Parchase = () => {
 	const [product, setProduct] = useState({});
 	const [user] = useAuthState(auth);
 	useEffect(() => {
-		fetch(`http://localhost:5000/tools/${id}`)
+		fetch(`https://young-springs-61644.herokuapp.com/tools/${id}`)
 			.then((res) => res.json())
 			.then((data) => setProduct(data));
 	}, [id]);
@@ -35,7 +35,7 @@ const Parchase = () => {
 			productOrder: orderCount,
 			productPurchase: user.email,
 		};
-		fetch("http://localhost:5000/orders", {
+		fetch("https://young-springs-61644.herokuapp.com/orders", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

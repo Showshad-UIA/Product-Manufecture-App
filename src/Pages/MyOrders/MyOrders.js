@@ -7,7 +7,9 @@ const MyOrders = () => {
 	const [user] = useAuthState(auth);
 	useEffect(() => {
 		if (user) {
-			fetch(`http://localhost:5000/orders?orderUser=${user.email}`)
+			fetch(
+				`https://young-springs-61644.herokuapp.com/orders?orderUser=${user.email}`
+			)
 				.then((res) => res.json())
 				.then((data) => setOrders(data));
 		}
@@ -23,7 +25,7 @@ const MyOrders = () => {
 							<th></th>
 							<th>Product Name</th>
 							<th>product Quantity</th>
-							<th>TK</th>
+							<th>Amount</th>
 						</tr>
 					</thead>
 					<tbody>
