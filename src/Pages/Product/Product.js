@@ -27,7 +27,7 @@ const Product = (props) => {
 				<p>{description}</p>
 				<p>Available quantity: {available_quantity} Pice</p>
 				<p>Minimum Order: {minimum_order_quantity} pice</p>
-				<p className="font-bold text-xl">Price per pice: ${price}</p>
+				<p className="font-bold text-xl">Price per pice: {price}</p>
 				<div className="card-actions justify-center">
 					<button onClick={() => itemDetails(_id)} className="btn btn-primary">
 						Order Now

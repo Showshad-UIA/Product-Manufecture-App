@@ -7,7 +7,7 @@ const MyOrders = () => {
 	const [user] = useAuthState(auth);
 	useEffect(() => {
 		if (user) {
-			fetch(`https://localhost:5000/orders?orderUser=${user.email}`)
+			fetch(`http://localhost:5000/orders?orderUser=${user.email}`)
 				.then((res) => res.json())
 				.then((data) => setOrders(data));
 		}

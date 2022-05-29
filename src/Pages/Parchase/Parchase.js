@@ -21,7 +21,7 @@ const Parchase = () => {
 	const handleMinus = (e) => {
 		e.preventDefault();
 		let minus = orderRef.current.value;
-		const countValue = `${product.availableQuantity}`;
+		const countValue = `${product.available_quantity}`;
 		if (minus > countValue) {
 			minus = countValue - 1;
 		}
@@ -35,7 +35,7 @@ const Parchase = () => {
 			productOrder: orderCount,
 			productPurchase: user.email,
 		};
-		fetch("https://localhost:5000/orders", {
+		fetch("http://localhost:5000/orders", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
